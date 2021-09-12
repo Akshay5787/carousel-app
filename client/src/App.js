@@ -2,10 +2,13 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "../src/components/Header";
 import Grid from "@material-ui/core/Grid";
-import Slides from "./components/Slides"
+import Slides from "./components/Slides";
+import Category from "./components/Category";
+import FolderIcon from "@material-ui/icons/Folder";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import Files from "./components/Files";
+import Images from "./components/Images";
 
-
-import Container from "@material-ui/core/Container";
 const App = () => {
   return (
     <div>
@@ -23,35 +26,38 @@ const App = () => {
             direction="row"
             justifyContent="space-between"
             alignItems="flex-start"
+            
           >
             <Grid xs={3}>
               <Grid
                 container
+                spacing={10}
                 direction="column"
                 justifyContent="space-between"
-                alignItems="center"
+                alignItems="center" 
               >
-                <Grid item>
-                  <h1 style={{ backgroundColor: "red" }}>help</h1>
+                <Grid item >
+                  <Category />
                 </Grid>
-                <Grid item>
-                  <h1 style={{ backgroundColor: "blue" }}>help</h1>
+                <hr />
+                <Grid item >
+                  <Files />
                 </Grid>
               </Grid>
             </Grid>
 
             <Grid xs={9}>
-              <Grid 
+              <Grid
                 container
                 direction="column"
                 justifyContent="flex-end"
                 alignItems="center"
               >
                 <Grid>
-                <Slides />;
+                  <Slides />;
                 </Grid>
                 <Grid>
-                  <h1 style={{ backgroundColor: "black" }}>help</h1>
+                  <Images />
                 </Grid>
               </Grid>
             </Grid>
