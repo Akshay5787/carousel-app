@@ -1,21 +1,20 @@
-import React from 'react'
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import { mergeClasses } from "@material-ui/styles";
+
+
 
 const Header = () => {
-    return (
-        <div>
-           <AppBar position="static">
-  <Toolbar>
-    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-      <MenuIcon />
-    </IconButton>
-    <Typography variant="h6" className={classes.title}>
-      News
-    </Typography>
-    <Button color="inherit">Login</Button>
-  </Toolbar>
-</AppBar> 
-        </div>
-    )
-}
+  return (
+    <>
+      <AppBar>
+        <Toolbar>
+          <h1 centered>Carousel</h1>
+        </Toolbar>
+      </AppBar>
+    </>
+  );
+};
 
-export default Header
+export default Header;
