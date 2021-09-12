@@ -2,6 +2,8 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "../src/components/Header";
 import Grid from "@material-ui/core/Grid";
+import Slides from "./components/Slides"
+
 
 import Container from "@material-ui/core/Container";
 const App = () => {
@@ -23,11 +25,35 @@ const App = () => {
             alignItems="flex-start"
           >
             <Grid xs={3}>
-              <h1 style={{ backgroundColor: "green" }}>please help</h1>
+              <Grid
+                container
+                direction="column"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Grid item>
+                  <h1 style={{ backgroundColor: "red" }}>help</h1>
+                </Grid>
+                <Grid item>
+                  <h1 style={{ backgroundColor: "blue" }}>help</h1>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid xs={9}>
-              <h1 style={{ backgroundColor: "blue" }}>please help</h1>
+              <Grid 
+                container
+                direction="column"
+                justifyContent="flex-end"
+                alignItems="center"
+              >
+                <Grid>
+                <Slides />;
+                </Grid>
+                <Grid>
+                  <h1 style={{ backgroundColor: "black" }}>help</h1>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </div>
