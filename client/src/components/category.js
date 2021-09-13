@@ -1,9 +1,16 @@
 import Dropdown from "react-bootstrap/Dropdown";
+import CategoryList from "../data/category.json";
+import React, { useEffect, useState } from "react";
 
-const category={
-        
-}
 const Category = () => {
+  const [category, setCategory] = useState("Japan");
+  const [clientId, setclientId] = useState(
+    "84K-62bUCwMYWCe1BLmkIPSNne2ILre2e5L5h8GV-EA"
+  );
+  function handleChange(event) {
+    setCategory(event.target.key);
+    console.log(event);
+  }
   return (
     <div>
       <>
@@ -16,16 +23,13 @@ const Category = () => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu variant="dark">
-            <Dropdown.Item href="/" active>
-              Action
-            </Dropdown.Item>
-            <Dropdown.Item href="/ducati">Ducati</Dropdown.Item>
-            <Dropdown.Item href="/japan">Japan</Dropdown.Item>
-            <Dropdown.Item href="/action-4">Separated link</Dropdown.Item>
-            <Dropdown.Item href="/japan">Japan</Dropdown.Item>
-            <Dropdown.Item href="/japan">Japan</Dropdown.Item>
-            <Dropdown.Item href="/japan">Japan</Dropdown.Item>
-            <Dropdown.Item href="/japan">Japan</Dropdown.Item>
+            {CategoryList.map((list, index) => {
+              return (
+                <Dropdown.Item onClick={handleChange} href={"/"+list.title} >
+                  {list.title}
+                </Dropdown.Item>
+              );
+            })}
           </Dropdown.Menu>
         </Dropdown>
       </>
